@@ -26,6 +26,7 @@ function login(username,password){
         element.username == username
         //element.username.localeCompare(username)
     )
+
     if (matched) {
         if (matched.password == password){
             return matched
@@ -38,7 +39,21 @@ function login(username,password){
     }
     //console.log (matched)
 }
+function register (newusername, newpassword, newname, newemail){
+    //to do: check if user exist
+
+    dbUser.push({
+        username: newusername,
+        password: newpassword,
+        name: newname,
+        email: newemail
+    })
+}
 
 //try to login
-console.log (login ("ain","12345"))
+//console.log (login ("ain","12345"))
 //console.log (login ("ain","123456"))
+
+//try to register
+register("bambam","1357","bambam","bambam@utem.edu.my")
+console.log (login ("bambam","1357"))
